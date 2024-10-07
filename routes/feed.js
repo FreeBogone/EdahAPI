@@ -10,7 +10,8 @@ const router = express.Router();
 router.get('/posts', feedController.getPosts);
 // POST /feed/post will be handled right now
 router.post('/post', feedController.createPost);
-
+// GET /feed/user will be handled right now
+router.get('/user', feedController.getUser);
 
 // export the router
 module.exports = router;

@@ -6,25 +6,36 @@ exports.getPosts = (req, res, next) => {
         posts: foundPosts
       });
     });
-  }
-  exports.createPost = (req, res, next) => {
-    const title = req.body.title;
-    const content = req.body.content;
-   
-    // create a new Post instance
-    const post = new Post({
-      title: title,
-      content: content
+  };
+
+exports.createPost = (req, res, next) => {
+  const title = req.body.title;
+  const content = req.body.content;
+  
+  // create a new Post instance
+  const post = new Post({
+    title: title,
+    content: content
+  });
+  
+  // save the instance to the database
+  post
+  .save()
+  .then(postSaved => {
+    res.status(201).json({
+      message: 'Post created successfully!',
+      post: postSaved
     });
-   
-    // save the instance to the database
-    post
-    .save()
-    .then(postSaved => {
-      res.status(201).json({
-        message: 'Post created successfully!',
-        post: postSaved
-      });
-    })
-    .catch(err => console.log('err', err));
-  }
+  })
+  .catch(err => console.log('err', err));
+};
+
+exports.getUser = (req, res, next) => {
+  User.find().then(foundUsers => {
+    res.json({
+      message: "All users",
+      users: foundUsers
+    });
+    console.log('foundUsers', foundUsers);
+  });
+};
