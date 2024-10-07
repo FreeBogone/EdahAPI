@@ -14,7 +14,7 @@ app.use('/feed', feedRoutes);
 // past the connection string given from your atlas server
 mongoose
   .connect(
-    'mongodb://app_user:password@medium-cluster-shard-00-00.tw6br.mongodb.net:27017,medium-cluster-shard-00-01.tw6br.mongodb.net:27017,medium-cluster-shard-00-02.tw6br.mongodb.net:27017/feeds?ssl=true&replicaSet=atlas-xyz-shard-0&authSource=admin&retryWrites=true&w=majority'
+    'mongodb+srv://adminUser:LXvucpt49wm1U8oN@cluster0.2x0ef.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
   )
   .then(result => {
     // listen to incoming requests on port 8080

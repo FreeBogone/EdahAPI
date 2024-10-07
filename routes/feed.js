@@ -10,5 +10,7 @@ const router = express.Router();
 router.get('/posts', feedController.getPosts);
 // POST /feed/post will be handled right now
 router.post('/post', feedController.createPost);
+
+
 // export the router
 module.exports = router;
