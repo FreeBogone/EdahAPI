@@ -12,9 +12,14 @@ app.use(express.json());
 app.use('/feed', feedRoutes);
 // setup a database connection using mongoose
 // past the connection string given from your atlas server
+
+//read in connect string from text file
+const fs = require('fs');
+const connectString = fs.readFileSync('connectString.txt', 'utf8');
+// connect to the database
 mongoose
   .connect(
-    'mongodb+srv://adminUser:LXvucpt49wm1U8oN@cluster0.2x0ef.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+    connectString
   )
   .then(result => {
     // listen to incoming requests on port 8080
