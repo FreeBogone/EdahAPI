@@ -16,9 +16,13 @@ router.get('/users', async (req, res) => {
 // Create a new user
 router.post('/users', async (req, res) => {
   const user = new User({
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password,
+    // username: String,
+    // email: String,
+    // fullname: String,
+    // bio: String,
+    // profilepicurl: String,
+    // numfriends: Number,
+    // numgroups: Number
   });
 
   try {

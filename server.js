@@ -24,5 +24,13 @@ app.listen(port, () => {
 });
 
 const userRoutes = require('./routes/userRoutes');
+const postRoutes = require('./routes/postRoutes');
+const commentRoutes = require('./routes/commentRoutes');
+const likeRoutes = require('./routes/likeRoutes');
+const friendRoutes = require('./routes/friendRoutes');
 
 app.use('/api', userRoutes);
+app.use('/api', postRoutes);
+app.use('/api', commentRoutes);
+app.use('/api', likeRoutes);
+app.use('/api', friendRoutes);
